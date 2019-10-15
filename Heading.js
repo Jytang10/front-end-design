@@ -1,14 +1,13 @@
 //import liraries
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import Heading from './Heading';
 
 // create a component
-class App extends Component {
+class Heading extends Component {
   render() {
     return (
-      <View style={{flex:1, padding:5}}>
-        <Heading></Heading>
+      <View style={styles.container}>
+        <Text style={{textAlign:'center', fontSize:15, marginVertical:15}}>Basic UI Demo</Text>
       </View>
     );
   }
@@ -16,8 +15,12 @@ class App extends Component {
 
 // define your styles
 const styles = StyleSheet.create({
-
+  container: {
+    backgroundColor:'#ff7550',
+    borderRadius:8,
+    shadowOpacity: 0.75,
+  },
 });
 
 //make this component available to the app
-export default App;
+export default Heading;
