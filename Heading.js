@@ -17,7 +17,8 @@ class Heading extends Component {
 const styles = StyleSheet.create({
   container: {
     backgroundColor:'#ff7550',
-    borderRadius:8
+    borderRadius:8,
+    shadowOpacity: 0.75,
   },
 });
 
