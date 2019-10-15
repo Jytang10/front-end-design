@@ -14,7 +14,7 @@ class LatestMembers extends Component {
     return this.state.data.map(singleData => {
       return (
         <View style={{alignItems:'center', padding:5}} key={singleData.id}>
-          <Image style={{height:50, width:50, borderRadius:25}} source={{uri:singleData.user_avatar}}></Image>
+          <Image style={{height:50, width:50, borderRadius:25, marginHorizontal:15}} source={{uri:singleData.user_avatar}}></Image>
           <Text>{singleData.username}</Text>
         </View>
       )
@@ -23,11 +23,15 @@ class LatestMembers extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={{fontSize:22, paddingTop:15}}>Latest Members</Text>
-        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-          {this.getLatestMembers()}
-        </ScrollView>
+      <View>
+        <View>
+          <Text style={{fontSize:22, paddingTop:15, fontWeight:'bold'}}>Latest Members</Text>
+        </View>
+        <View style={styles.container}>
+          <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+            {this.getLatestMembers()}
+          </ScrollView>
+        </View>
       </View>
     );
   }
@@ -37,7 +41,9 @@ class LatestMembers extends Component {
 const styles = StyleSheet.create({
   container: {
     backgroundColor:'#a4b0be',
-    paddingVertical:5
+    marginVertical:8,
+    paddingVertical:5,
+    borderRadius:8
   },
 });
 
