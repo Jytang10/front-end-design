@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import Heading from './Heading';
 import Hero from './Hero';
+import LatestMembers from './LatestMembers';
 
 // create a component
 class App extends Component {
@@ -11,6 +12,7 @@ class App extends Component {
       <View style={{flex:1, padding:5}}>
         <Heading></Heading>
         <Hero></Hero>
+        <LatestMembers></LatestMembers>
       </View>
     );
   }
