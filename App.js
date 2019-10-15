@@ -1,4 +1,3 @@
-//import liraries
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, ScrollView, FlatList, Image, Dimensions } from 'react-native';
 import Heading from './Heading';
@@ -7,7 +6,6 @@ import LatestMembers from './LatestMembers';
 import Mosaic from './Mosaic';
 import data from './data';
 
-// create a component
 class App extends Component {
 
   state = {
@@ -42,7 +40,12 @@ class App extends Component {
                   <Image style={styles.image} source={{uri:item.image_link}}></Image>
                 </View>
                 <View style={styles.rightSideContent}>
-                  <Text>{item.headline}</Text>
+                  <Text style={{width:90, backgroundColor:'#7bed9f', textAlign:'center', borderRadius:6, paddingVertical:4}}>{item.type}</Text>
+                  <Text style={styles.headlines}>{item.headline}</Text>
+                  <View style={styles.avatarAndCaption}>
+                    <Image style={{height:24, width:24, borderRadius:12}} source={{uri:item.user_avatar}}></Image>
+                    <Text styles={{paddingLeft:10}}>{item.username}</Text>
+                  </View>
                 </View>
               </View>
             )}
@@ -75,9 +78,18 @@ const styles = StyleSheet.create({
     borderRadius:10
   },
   rightSideContent:{
-    width:(Dimensions.get('window').width / 1.5)
+    width:(Dimensions.get('window').width / 1.5),
+    paddingLeft:8
+  },
+  headlines:{
+    fontSize:17,
+    fontWeight:'bold',
+  },
+  avatarAndCaption:{
+    flexDirection:'row',
+    alignSelf:'stretch',
+    paddingTop:15
   }
 });
 
-//make this component available to the app
 export default App;
